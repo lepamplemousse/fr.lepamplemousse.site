@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <meta charset="UTF-8" />
+        <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="Lepamplemousse :: aimez les agrumes">
         <meta name="author" content="Thomas D.">
@@ -9,12 +9,16 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
 
         {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
-        <link rel="stylesheet" href="{{ asset('css/cover.css') }}" />
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('css/cover.css') }}"/>
     </head>
     <body class="text-center">
-        {% block body %}{% endblock %}
+        <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+            {% include('@App/nav.html.twig') %}
+            {% block body %}{% endblock %}
+            {% include('@App/footer.html.twig') %}
+        </div>
         {% block javascripts %}{% endblock %}
         <script src="{{ asset('js/jquery.min.js') }}"></script>
         <script src="{{ asset('js/bootstrap.min.js') }}"></script>
