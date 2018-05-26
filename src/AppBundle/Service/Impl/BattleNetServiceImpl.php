@@ -122,15 +122,6 @@ class BattleNetServiceImpl implements IBattleNetService {
     }
 
     /**
-     * @return mixed
-     */
-    public function getCharactersD3() {
-        $url = 'https://eu.api.battle.net/d3/profile/Neliwien-2880/?locale=fr_FR&apikey=';
-        $resultat = $this->getCURL($url);
-        return $resultat;
-    }
-
-    /**
      * @return BattleNetRepositoryImpl
      */
     public function getBattleNetRepository() {

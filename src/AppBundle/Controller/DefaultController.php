@@ -11,14 +11,11 @@ class DefaultController extends Controller {
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function indexAction(Request $request) {
+
         $charactersWoW = $this->get('BattleNetService')->getCharactersWoW();
-        $charactersD3 = $this->get('BattleNetService')->getCharactersD3();
 
-        return $this->render('@App/default/games.html.twig', [
-            'charactersWoW' => $charactersWoW,
-            'charactersD3' => $charactersD3
-        ]);
-
-        //return $this->render('@App/default/index.html.twig');
+        return $this->render('@App/default/index.html.twig', array(
+            'charactersWoW' => $charactersWoW
+        ));
     }
 }
