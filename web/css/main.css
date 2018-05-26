@@ -9,6 +9,7 @@
     padding: 7px 7px 0;
     background: url(/img/hero-nav-frames.png) 0 -124px no-repeat;
 }
+
 .hero-tabs .hero-portrait {
     display: block;
     position: relative;
@@ -18,27 +19,61 @@
     overflow: hidden;
     background: url(/img/hero-nav-portraits.jpg) no-repeat;
 }
+
 .hero-tabs .monial-0 .hero-portrait {
     background-position: 0 -132px;
 }
+
 .hero-tabs .moniale-1 .hero-portrait {
     background-position: -83px -132px;
 }
+
 .hero-tabs .nécromancien-0 .hero-portrait {
     background-position: 0 -198px;
 }
+
 .hero-tabs .nécromancienne-1 .hero-portrait {
     background-position: -83px -198px;
 }
+
 .hero-tabs .sorcier-0 .hero-portrait {
     background-position: 0 -264px;
 }
+
 .hero-tabs .croisée-1 .hero-portrait {
     background-position: -83px -330px;
 }
+
 .hero-tabs .chasseuse-de-démons-1 .hero-portrait {
     background-position: -83px -66px;
 }
+
 .hero-tabs .barbare-0 .hero-portrait {
     background-position: 0 0;
+}
+
+/**
+    SURCHARGES
+*/
+html,
+body {
+    background-color: #332a0f;
+}
+* {
+    color: rgb(140, 116, 44);
+}
+.cover-container {
+    max-width: 42em;
+    background: rgba(95, 77, 26, 0.32);
+    border-left: 1px solid #8c742c;
+    border-right: 1px solid #8c742c;
+}
+.nav-masthead .nav-link,
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+    color: rgba(249, 220, 140, 0.35);
+}
+.nav-masthead .nav-link.active {
+    color: rgb(140, 116, 44);
+    border-bottom-color: rgb(140, 116, 44);
 }
