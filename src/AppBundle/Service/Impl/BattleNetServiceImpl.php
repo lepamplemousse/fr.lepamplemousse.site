@@ -68,7 +68,10 @@ class BattleNetServiceImpl implements IBattleNetService {
         $charactersWoWList = $this->battleNetRepository->getCharactersWoW();
         $return = array();
         foreach ($charactersWoWList as $character) {
-            $return[] = $this->getCharacterWoW($character->getName(), $character->getRealm());
+            $myCharacter = $this->getCharacterWoW($character->getName(), $character->getRealm());
+           if ($myCharacter) {
+               $return[] = $myCharacter;
+           }
         }
         return $return;
     }
@@ -81,10 +84,16 @@ class BattleNetServiceImpl implements IBattleNetService {
     private function getCharacterWoW($name, $realm) {
         $url = 'https://eu.api.battle.net/wow/character/' . $realm . '/' . $name . '?locale=fr_FR&apikey=';
         $resultat = $this->getCURL($url);
-        $resultat['class'] = $this->getClasseWoW($resultat['class']);
-        $resultat['race'] = $this->getRaceWoW($resultat['race']);
-        $resultat['gender'] = $this->gender[$resultat['gender']];
-        return $resultat;
+        $return = null;
+        if (!isset($resultat['status'])){
+            $return['level'] = $resultat['level'];
+            $return['name'] = $resultat['name'];
+            $return['class'] = $this->getClasseWoW($resultat['class']);
+            $return['race'] = $this->getRaceWoW($resultat['race']);
+            $return['gender'] = $this->gender[$resultat['gender']];
+            $return['thumbnail'] = $resultat['thumbnail'];
+        }
+        return $return;
     }
 
     /**
@@ -119,6 +128,15 @@ class BattleNetServiceImpl implements IBattleNetService {
                 }
             }
         }
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCharactersD3() {
+        $url = 'https://eu.api.battle.net/d3/profile/Neliwien-2880/?locale=fr_FR&apikey=';
+        $resultat = $this->getCURL($url);
+        return $resultat;
     }
 
     /**

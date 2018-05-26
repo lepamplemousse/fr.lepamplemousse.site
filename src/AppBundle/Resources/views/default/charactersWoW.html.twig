@@ -1,17 +1,19 @@
 <div class="row text-left">
     <div class="col-md-12">
         <h2>World of Warcraft</h2>
-        <div class="inner">
+        <div class="inner row">
             {% for characterWoW in charactersWoW %}
-                <div class="row character">
-                    <div class="col-sm-2 col-xs-4">
+                <div class="character col-md-6 {{ cycle(['odd', 'even'], loop.index0) }}">
+                    <div class="row ">
+                    <div class="col-md-3">
                         <img src="http://render-api-eu.worldofwarcraft.com/static-render/eu/{{ characterWoW['thumbnail'] }}"/>
                     </div>
-                    <div class="col-sm-10 col-xs-8">
+                    <div class="col-md-9">
                         <b>{{ characterWoW['name'] }}</b><br/>
                         {{ characterWoW['class'] }} {{ characterWoW['level'] }}<br/>
                         {{ characterWoW['race'] }} {{ characterWoW['gender'] }}
                     </div>
+                </div>
                 </div>
             {% endfor %}
         </div>
