@@ -1,0 +1,11 @@
+services:
+  BattleNetService:
+    class: AppBundle\Service\Impl\BattleNetServiceImpl
+    arguments: ['%bnet_key%']
+    calls:
+      - [setBattleNetRepository, ["@BattleNetRepository"]]
+
+  BattleNetRepository:
+    class: AppBundle\Repository\Impl\BattleNetRepositoryImpl
+    calls:
+      - [setEntityManager, ["@doctrine.orm.entity_manager"]]

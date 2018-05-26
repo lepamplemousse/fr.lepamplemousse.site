@@ -1,0 +1,44 @@
+/**
+    DIABLO 3
+*/
+
+.hero-tabs .hero-tab {
+    display: block;
+    width: 84px;
+    height: 77px;
+    padding: 7px 7px 0;
+    background: url(/img/hero-nav-frames.png) 0 -124px no-repeat;
+}
+.hero-tabs .hero-portrait {
+    display: block;
+    position: relative;
+    width: 76px;
+    height: 1px;
+    padding-top: 65px;
+    overflow: hidden;
+    background: url(/img/hero-nav-portraits.jpg) no-repeat;
+}
+.hero-tabs .monial-0 .hero-portrait {
+    background-position: 0 -132px;
+}
+.hero-tabs .moniale-1 .hero-portrait {
+    background-position: -83px -132px;
+}
+.hero-tabs .nécromancien-0 .hero-portrait {
+    background-position: 0 -198px;
+}
+.hero-tabs .nécromancienne-1 .hero-portrait {
+    background-position: -83px -198px;
+}
+.hero-tabs .sorcier-0 .hero-portrait {
+    background-position: 0 -264px;
+}
+.hero-tabs .croisée-1 .hero-portrait {
+    background-position: -83px -330px;
+}
+.hero-tabs .chasseuse-de-démons-1 .hero-portrait {
+    background-position: -83px -66px;
+}
+.hero-tabs .barbare-0 .hero-portrait {
+    background-position: 0 0;
+}
